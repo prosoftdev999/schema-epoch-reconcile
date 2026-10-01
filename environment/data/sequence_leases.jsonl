@@ -1,0 +1,7 @@
+{"generation":"g0","lease_id":"g0-a","valid_from_lsn":1,"start":10000,"end":10149}
+{"generation":"g0","lease_id":"g0-b","valid_from_lsn":2300,"start":10150,"end":10349}
+{"generation":"g1","lease_id":"g1-a","valid_from_lsn":1,"start":20000,"end":20199}
+{"generation":"g1","lease_id":"g1-b","valid_from_lsn":2200,"start":20200,"end":20449}
+{"generation":"g2","lease_id":"g2-a","valid_from_lsn":1,"start":30000,"end":30249}
+{"generation":"g2","lease_id":"g2-b","valid_from_lsn":2100,"start":30250,"end":30549}
+{"generation":"g_alt","lease_id":"ga-a","valid_from_lsn":1,"start":40000,"end":40149}

@@ -1,0 +1,3 @@
+{"generation":"g_alt","valid_from_lsn":0,"snapshot_id":"g_alt-s0","xmin":4294967232,"xmax":4294967248,"xip":[4294967232],"subxip":[],"suboverflowed":false}
+{"generation":"g_alt","valid_from_lsn":700,"snapshot_id":"g_alt-s1","xmin":4294967264,"xmax":4294967280,"xip":[4294967264],"subxip":[],"suboverflowed":true}
+{"generation":"g_alt","valid_from_lsn":1400,"snapshot_id":"g_alt-s2","xmin":4294967280,"xmax":0,"xip":[],"subxip":[],"suboverflowed":false}

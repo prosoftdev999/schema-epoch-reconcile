@@ -1,0 +1,50 @@
+artifacts = ["/app/output/schema_epoch_recovery.json"]
+
+[task]
+name = "afterquery/schema-epoch-reconcile"
+
+[metadata]
+author_name = "Thomas Morison"
+author_email = "matiasv931026@gmail.com"
+difficulty_explanation = """
+The core challenge is recovering two forms of database history that interact but are recorded differently. The durable logical history has to be reconstructed from fragmented receiver WAL under changing replication membership. That history establishes the promoted catalog and session timeline. Prepared statements also depend on physical catalog descriptors recovered from checksummed relcache heap pages, transaction-status records, subtransaction ancestry, wraparound XID ordering, and historical snapshots. A small number of descriptor replacements are consequential; most statements continue through the original transaction path, so the relcache layer adds state that must be correct without collapsing the rest of the replay.
+
+A direct join or final-state-only reconstruction is insufficient. A healthy-looking receiver can contain a losing fork, and the relcache image contains stale, aborted, and bad-page tuple candidates. Logical column identity and physical descriptor lifetime are separate: names can be renamed or reused, while a prepared plan retains the binding and descriptor it captured earlier. A wrong decision in either recovery layer changes later sequence allocation, savepoint state, conflict detection, constraints, and final rows.
+
+Plausible near misses include following one receiver tail, counting a retired voter after a membership change, treating the newest physical descriptor tuple as authoritative, comparing 32-bit XIDs without wraparound semantics, mishandling subcommitted XIDs in an overflowed snapshot, re-resolving prepared columns by their current names, or rewinding sequence allocation after rollback to a savepoint. These errors can each leave a locally coherent replay while producing different downstream transaction and execution outcomes.
+
+The dataset is synthetic. Its fragmented WAL, quorum transitions, promotion forks, catalog renames and drop/re-add cycles, relcache page corruption, MVCC descriptor versions, subtransaction ancestry, prepared-plan lifetime, savepoints, overlapping transactions, and leased identities are modeled after realistic database failover and catalog-cache recovery incidents without using production customer data.
+
+This kind of reconstruction would typically be performed by a database reliability engineer, storage/replication engineer, or database runtime engineer investigating a failed metadata restore after promotion.
+
+A focused domain expert would typically need about 9 hours to inspect the captures, recover the durable history, reconstruct time-qualified descriptor state, replay catalog/session/transaction behavior, test competing explanations, and produce the final artifact.
+"""
+solution_explanation = """
+The reference validates and reassembles receiver WAL fragments, follows the quorum-backed `prev_lsn` chain across membership changes, and converts durable logical records into catalog, session, transaction, execution, and savepoint streams. Independently, it parses the 4096-byte relcache heap pages, rejects bad-checksum pages, decodes tuple versions, resolves transaction and subtransaction status, applies 32-bit wraparound snapshot membership, and selects the single visible descriptor for each relevant column at each event LSN.
+
+It then derives the promoted ancestry and cutoffs, replays surviving generation segments, carries committed table/catalog state across fork points while resetting client sessions at promotion, and binds prepared plans to column IDs, logical binding epochs, and physical descriptor IDs. The transaction engine replays nested savepoints without rewinding sequence leases, consumes identity values only for valid executed inserts, preserves begin snapshots, applies first-committer-wins conflict detection and constraints, and emits the recovered schema, rows, transaction outcomes, and execution audit.
+"""
+verification_explanation = """
+The verifier parses only /app/output/schema_epoch_recovery.json. It checks the four required semantic collections against sealed expected data generated from the shipped capture by the reference implementation. Array ordering and JSON object key ordering are normalized; identifiers must be unique and row contents must match the recovered final schema. The verifier never imports or executes candidate code. test.sh initializes reward.txt to 0 and writes 1 only after the complete pytest suite succeeds, with CTRF output at /logs/verifier/ctrf.json.
+"""
+category = "Software"
+subcategory = "Databases"
+tags = ["database-recovery", "wal-recovery", "catalog-mvcc", "prepared-plans"]
+expert_time_estimate_hours = 9
+relevant_experience = """
+Practical experience with replicated database WAL, quorum and failover recovery, MVCC snapshot visibility, transaction-status/subtransaction state, transactional database internals, schema migration, prepared-plan behavior, and deterministic replay tooling.
+"""
+
+[verifier]
+timeout_sec = 300
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 7200
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192
+gpus = 0

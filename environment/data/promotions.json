@@ -1,0 +1,25 @@
+{
+  "final_generation": "g2",
+  "generations": [
+    {
+      "generation": "g0",
+      "parent": null,
+      "fork_parent_lsn": null
+    },
+    {
+      "generation": "g1",
+      "parent": "g0",
+      "fork_parent_lsn": 4200
+    },
+    {
+      "generation": "g2",
+      "parent": "g1",
+      "fork_parent_lsn": 3800
+    },
+    {
+      "generation": "g_alt",
+      "parent": "g0",
+      "fork_parent_lsn": 3500
+    }
+  ]
+}

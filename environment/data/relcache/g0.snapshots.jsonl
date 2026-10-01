@@ -1,0 +1,5 @@
+{"generation":"g0","valid_from_lsn":0,"snapshot_id":"g0-s0","xmin":4294967232,"xmax":4294967248,"xip":[4294967232],"subxip":[],"suboverflowed":false}
+{"generation":"g0","valid_from_lsn":1450,"snapshot_id":"g0-s1","xmin":4294967264,"xmax":4294967280,"xip":[4294967264],"subxip":[],"suboverflowed":true}
+{"generation":"g0","valid_from_lsn":2320,"snapshot_id":"g0-s2","xmin":32,"xmax":48,"xip":[32],"subxip":[],"suboverflowed":false}
+{"generation":"g0","valid_from_lsn":2860,"snapshot_id":"g0-s3","xmin":80,"xmax":96,"xip":[80],"subxip":[],"suboverflowed":true}
+{"generation":"g0","valid_from_lsn":3520,"snapshot_id":"g0-s4","xmin":96,"xmax":112,"xip":[],"subxip":[],"suboverflowed":false}

@@ -1,0 +1,718 @@
+{
+  "columns": [
+    {
+      "column_id": "c1",
+      "name": "account_id",
+      "type": "int",
+      "nullable": false,
+      "default": null,
+      "primary_key": true,
+      "unique": true,
+      "check": null,
+      "ordinal": 1,
+      "binding_epoch": 0
+    },
+    {
+      "column_id": "c2",
+      "name": "email",
+      "type": "text",
+      "nullable": false,
+      "default": null,
+      "primary_key": false,
+      "unique": true,
+      "check": "email",
+      "ordinal": 2,
+      "binding_epoch": 0
+    },
+    {
+      "column_id": "c3",
+      "name": "score",
+      "type": "int",
+      "nullable": false,
+      "default": 0,
+      "primary_key": false,
+      "unique": false,
+      "check": "score_0_100",
+      "ordinal": 3,
+      "binding_epoch": 0
+    },
+    {
+      "column_id": "c4",
+      "name": "state",
+      "type": "text",
+      "nullable": false,
+      "default": "active",
+      "primary_key": false,
+      "unique": false,
+      "check": "state",
+      "ordinal": 4,
+      "binding_epoch": 0
+    },
+    {
+      "column_id": "c5",
+      "name": "credit_limit",
+      "type": "int",
+      "nullable": false,
+      "default": 1000,
+      "primary_key": false,
+      "unique": false,
+      "check": "nonnegative",
+      "ordinal": 5,
+      "binding_epoch": 0
+    },
+    {
+      "column_id": "c6",
+      "name": "note",
+      "type": "text",
+      "nullable": true,
+      "default": null,
+      "primary_key": false,
+      "unique": false,
+      "check": null,
+      "ordinal": 6,
+      "binding_epoch": 0
+    }
+  ],
+  "rows": [
+    {
+      "c1": 1,
+      "c2": "user001@example.test",
+      "c3": 7,
+      "c4": "hold",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 2,
+      "c2": "user002@example.test",
+      "c3": 14,
+      "c4": "closed",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 3,
+      "c2": "user003@example.test",
+      "c3": 21,
+      "c4": "active",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 4,
+      "c2": "user004@example.test",
+      "c3": 28,
+      "c4": "hold",
+      "c5": 1500,
+      "c6": "legacy-4"
+    },
+    {
+      "c1": 5,
+      "c2": "user005@example.test",
+      "c3": 35,
+      "c4": "closed",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 6,
+      "c2": "user006@example.test",
+      "c3": 42,
+      "c4": "active",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 7,
+      "c2": "user007@example.test",
+      "c3": 49,
+      "c4": "hold",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 8,
+      "c2": "user008@example.test",
+      "c3": 56,
+      "c4": "closed",
+      "c5": 750,
+      "c6": "legacy-8"
+    },
+    {
+      "c1": 9,
+      "c2": "user009@example.test",
+      "c3": 63,
+      "c4": "active",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 10,
+      "c2": "user010@example.test",
+      "c3": 70,
+      "c4": "hold",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 11,
+      "c2": "user011@example.test",
+      "c3": 77,
+      "c4": "closed",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 12,
+      "c2": "user012@example.test",
+      "c3": 84,
+      "c4": "active",
+      "c5": 1750,
+      "c6": "legacy-12"
+    },
+    {
+      "c1": 13,
+      "c2": "user013@example.test",
+      "c3": 91,
+      "c4": "hold",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 14,
+      "c2": "user014@example.test",
+      "c3": 98,
+      "c4": "closed",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 15,
+      "c2": "user015@example.test",
+      "c3": 4,
+      "c4": "active",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 16,
+      "c2": "user016@example.test",
+      "c3": 11,
+      "c4": "hold",
+      "c5": 1000,
+      "c6": "legacy-16"
+    },
+    {
+      "c1": 17,
+      "c2": "user017@example.test",
+      "c3": 18,
+      "c4": "closed",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 18,
+      "c2": "user018@example.test",
+      "c3": 25,
+      "c4": "active",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 19,
+      "c2": "user019@example.test",
+      "c3": 32,
+      "c4": "hold",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 20,
+      "c2": "user020@example.test",
+      "c3": 39,
+      "c4": "closed",
+      "c5": 2000,
+      "c6": "legacy-20"
+    },
+    {
+      "c1": 21,
+      "c2": "user021@example.test",
+      "c3": 46,
+      "c4": "active",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 22,
+      "c2": "user022@example.test",
+      "c3": 53,
+      "c4": "hold",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 23,
+      "c2": "user023@example.test",
+      "c3": 60,
+      "c4": "closed",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 24,
+      "c2": "user024@example.test",
+      "c3": 67,
+      "c4": "active",
+      "c5": 1250,
+      "c6": "legacy-24"
+    },
+    {
+      "c1": 25,
+      "c2": "user025@example.test",
+      "c3": 74,
+      "c4": "hold",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 26,
+      "c2": "user026@example.test",
+      "c3": 81,
+      "c4": "closed",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 27,
+      "c2": "user027@example.test",
+      "c3": 88,
+      "c4": "active",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 28,
+      "c2": "user028@example.test",
+      "c3": 95,
+      "c4": "hold",
+      "c5": 500,
+      "c6": "legacy-28"
+    },
+    {
+      "c1": 29,
+      "c2": "user029@example.test",
+      "c3": 1,
+      "c4": "closed",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 30,
+      "c2": "user030@example.test",
+      "c3": 8,
+      "c4": "active",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 31,
+      "c2": "user031@example.test",
+      "c3": 15,
+      "c4": "hold",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 32,
+      "c2": "user032@example.test",
+      "c3": 22,
+      "c4": "closed",
+      "c5": 1500,
+      "c6": "legacy-32"
+    },
+    {
+      "c1": 33,
+      "c2": "user033@example.test",
+      "c3": 29,
+      "c4": "active",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 34,
+      "c2": "user034@example.test",
+      "c3": 36,
+      "c4": "hold",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 35,
+      "c2": "user035@example.test",
+      "c3": 43,
+      "c4": "closed",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 36,
+      "c2": "user036@example.test",
+      "c3": 50,
+      "c4": "active",
+      "c5": 750,
+      "c6": "legacy-36"
+    },
+    {
+      "c1": 37,
+      "c2": "user037@example.test",
+      "c3": 57,
+      "c4": "hold",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 38,
+      "c2": "user038@example.test",
+      "c3": 64,
+      "c4": "closed",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 39,
+      "c2": "user039@example.test",
+      "c3": 71,
+      "c4": "active",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 40,
+      "c2": "user040@example.test",
+      "c3": 78,
+      "c4": "hold",
+      "c5": 1750,
+      "c6": "legacy-40"
+    },
+    {
+      "c1": 41,
+      "c2": "user041@example.test",
+      "c3": 85,
+      "c4": "closed",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 42,
+      "c2": "user042@example.test",
+      "c3": 92,
+      "c4": "active",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 43,
+      "c2": "user043@example.test",
+      "c3": 99,
+      "c4": "hold",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 44,
+      "c2": "user044@example.test",
+      "c3": 5,
+      "c4": "closed",
+      "c5": 1000,
+      "c6": "legacy-44"
+    },
+    {
+      "c1": 45,
+      "c2": "user045@example.test",
+      "c3": 12,
+      "c4": "active",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 46,
+      "c2": "user046@example.test",
+      "c3": 19,
+      "c4": "hold",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 47,
+      "c2": "user047@example.test",
+      "c3": 26,
+      "c4": "closed",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 48,
+      "c2": "user048@example.test",
+      "c3": 33,
+      "c4": "active",
+      "c5": 2000,
+      "c6": "legacy-48"
+    },
+    {
+      "c1": 49,
+      "c2": "user049@example.test",
+      "c3": 40,
+      "c4": "hold",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 50,
+      "c2": "user050@example.test",
+      "c3": 47,
+      "c4": "closed",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 51,
+      "c2": "user051@example.test",
+      "c3": 54,
+      "c4": "active",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 52,
+      "c2": "user052@example.test",
+      "c3": 61,
+      "c4": "hold",
+      "c5": 1250,
+      "c6": "legacy-52"
+    },
+    {
+      "c1": 53,
+      "c2": "user053@example.test",
+      "c3": 68,
+      "c4": "closed",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 54,
+      "c2": "user054@example.test",
+      "c3": 75,
+      "c4": "active",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 55,
+      "c2": "user055@example.test",
+      "c3": 82,
+      "c4": "hold",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 56,
+      "c2": "user056@example.test",
+      "c3": 89,
+      "c4": "closed",
+      "c5": 500,
+      "c6": "legacy-56"
+    },
+    {
+      "c1": 57,
+      "c2": "user057@example.test",
+      "c3": 96,
+      "c4": "active",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 58,
+      "c2": "user058@example.test",
+      "c3": 2,
+      "c4": "hold",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 59,
+      "c2": "user059@example.test",
+      "c3": 9,
+      "c4": "closed",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 60,
+      "c2": "user060@example.test",
+      "c3": 16,
+      "c4": "active",
+      "c5": 1500,
+      "c6": "legacy-60"
+    },
+    {
+      "c1": 61,
+      "c2": "user061@example.test",
+      "c3": 23,
+      "c4": "hold",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 62,
+      "c2": "user062@example.test",
+      "c3": 30,
+      "c4": "closed",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 63,
+      "c2": "user063@example.test",
+      "c3": 37,
+      "c4": "active",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 64,
+      "c2": "user064@example.test",
+      "c3": 44,
+      "c4": "hold",
+      "c5": 750,
+      "c6": "legacy-64"
+    },
+    {
+      "c1": 65,
+      "c2": "user065@example.test",
+      "c3": 51,
+      "c4": "closed",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 66,
+      "c2": "user066@example.test",
+      "c3": 58,
+      "c4": "active",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 67,
+      "c2": "user067@example.test",
+      "c3": 65,
+      "c4": "hold",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 68,
+      "c2": "user068@example.test",
+      "c3": 72,
+      "c4": "closed",
+      "c5": 1750,
+      "c6": "legacy-68"
+    },
+    {
+      "c1": 69,
+      "c2": "user069@example.test",
+      "c3": 79,
+      "c4": "active",
+      "c5": 2000,
+      "c6": null
+    },
+    {
+      "c1": 70,
+      "c2": "user070@example.test",
+      "c3": 86,
+      "c4": "hold",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 71,
+      "c2": "user071@example.test",
+      "c3": 93,
+      "c4": "closed",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 72,
+      "c2": "user072@example.test",
+      "c3": 100,
+      "c4": "active",
+      "c5": 1000,
+      "c6": "legacy-72"
+    },
+    {
+      "c1": 73,
+      "c2": "user073@example.test",
+      "c3": 6,
+      "c4": "hold",
+      "c5": 1250,
+      "c6": null
+    },
+    {
+      "c1": 74,
+      "c2": "user074@example.test",
+      "c3": 13,
+      "c4": "closed",
+      "c5": 1500,
+      "c6": null
+    },
+    {
+      "c1": 75,
+      "c2": "user075@example.test",
+      "c3": 20,
+      "c4": "active",
+      "c5": 1750,
+      "c6": null
+    },
+    {
+      "c1": 76,
+      "c2": "user076@example.test",
+      "c3": 27,
+      "c4": "hold",
+      "c5": 2000,
+      "c6": "legacy-76"
+    },
+    {
+      "c1": 77,
+      "c2": "user077@example.test",
+      "c3": 34,
+      "c4": "closed",
+      "c5": 500,
+      "c6": null
+    },
+    {
+      "c1": 78,
+      "c2": "user078@example.test",
+      "c3": 41,
+      "c4": "active",
+      "c5": 750,
+      "c6": null
+    },
+    {
+      "c1": 79,
+      "c2": "user079@example.test",
+      "c3": 48,
+      "c4": "hold",
+      "c5": 1000,
+      "c6": null
+    },
+    {
+      "c1": 80,
+      "c2": "user080@example.test",
+      "c3": 55,
+      "c4": "closed",
+      "c5": 1250,
+      "c6": "legacy-80"
+    }
+  ]
+}
